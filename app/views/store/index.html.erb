@@ -1,0 +1,13 @@
+<h1>Store</h1>
+
+<% @products.each do |product| %>
+  <div class="product">
+    <%= image_tag "/system/product_images/" + product.image_url, :height => '245' %>
+    <h2><%= product.title %></h2>
+    <div>
+      <span class="price"><%= number_to_currency(product.price) %></span>
+      <%= link_to 'Show', product %>
+      <%= button_to 'Add to cart', line_items_path(:product_id => product.id), :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

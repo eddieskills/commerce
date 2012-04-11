@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Back Office</title>
+  <title>Store</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,8 +19,8 @@
           <a class="brand" href="#">E-commerce</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><%= link_to 'Home', "/store/index" %></li>
-              <li class="active"><%= link_to 'Back Office', "/products" %></li>
+              <li class="active"><%= link_to 'Home', "/store/index" %></li>
+              <li><%= link_to 'Back Office', "/products" %></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -29,7 +29,8 @@
     </div>
 
     <div class="container" id="main">
-    	
+        <%= flash[:notice] %>
+        <%= flash[:error] %>
       	<%= yield %>
 
     </div>

@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+	has_many :line_items, :dependent => :restrict
+
 	validates_presence_of :title, :description, :image_url, :price
 	validates_numericality_of :price
 	validates_uniqueness_of :title

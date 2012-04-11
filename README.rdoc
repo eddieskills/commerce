@@ -24,3 +24,22 @@ p.save
 * Raccourcis Rails
 > rails server = rails s
 > rails generate = rails g
+
+* Validation des données (dans le model)
+Données obligatoire
+  validates_presence_of :champ1, :champ2
+
+* Création du store
+> rails g controller store index
+
+* Créer une table session dans la BDD (conseillée pour les sites e-commerce)
+> rake db:sessions:create
+> rake db:migrate
+
+* Création du panier
+> rails generate scaffold Cart
+> rake db:migrate
+
+* Création du LineItem (table de liaison entre les paniers et les produits)
+> rails g scaffold LineItem cart_id:integer product_id:integer
+> rake db:migrate

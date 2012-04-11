@@ -9,5 +9,69 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap
 */
+body {
+	background:#ccc8a2;
+}
+#main {
+	background:#e7e2c4;
+	border: 1px solid #beb999;
+	border-radius:5px;
+	margin-top: 80px;
+	padding: 20px 40px;
+}
+
+
+/* store */
+.product {
+	width:245px;
+	border:#bebb9c solid 1px;
+	border-radius:5px;
+	display: inline-block;
+	margin-right:30px;
+}
+.product img {
+	border-radius:5px 5px 0 0;
+}
+.product h2 {
+	background:#262014;
+	font-size:0.9em;
+	color:#FFFFFF;
+	padding: 5px 10px;
+	line-height:normal;
+}
+
+.product div {
+	background:#d5d1ac;
+	padding: 5px 10px;
+	border-radius:0 0 5px 5px;
+	position: relative;
+}
+.product form {
+	position: absolute;
+	right:1px;
+	top:3px;	
+	padding:0;
+}
+.product form, .product form div, .product input {
+	margin:0;
+	padding:0;
+}
+.product input {
+	padding:2px 5px;
+}
+
+
+
+/* Back Office */
+table {
+	width:100%;
+}
+th, td {
+	border-bottom:1px solid #bebb9c;
+	padding: 5px;
+}
+th {
+	border-top:1px solid #bebb9c;
+}
