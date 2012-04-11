@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+
+  layout 'store'
+
   # GET /carts
   # GET /carts.json
   def index

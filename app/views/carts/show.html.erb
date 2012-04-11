@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<h1>Votre panier</h1>
+
+<ul>
+<% @cart.line_items.each do |line_item| %>
+	<li><%= line_item.product.title %></li>
+<% end %>
+</ul>
