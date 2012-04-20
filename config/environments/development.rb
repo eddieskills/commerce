@@ -43,8 +43,8 @@ Commerce::Application.configure do
     :port => 587,
     :domain => "gmail.com",
     :authentication => "plain",
-    :user_name => "lauriane.colas",
-    :password => "isa2461FAB",
+    :user_name => "user",
+    :password => "mdp",
     :enable_starttls_auto => true
   }
 
