@@ -1,0 +1,7 @@
+<tr>
+	<td><%= line_item.product.title %></td>
+	<td><%= line_item.product.price %></td>
+	<td><%= line_item.quantity %></td>
+	<td><%= line_item.total %></td>
+	<td><%= button_to "Supprimer le produit", line_item, :method => :delete %></td>
+</tr>

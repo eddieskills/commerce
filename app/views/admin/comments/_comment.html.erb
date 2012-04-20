@@ -1,0 +1,5 @@
+<tr>
+	<td><%= comment.body %></td>
+	<td><%= link_to "Edit", edit_admin_article_comment_url(@article, comment) %></td>
+	<td><%= link_to "Delete", [:admin, @article, comment], :method => :delete %></td>
+</tr>

@@ -9,7 +9,7 @@
 > rake db:migrate
 
 * Modification de la migration
-Dans le dernier fichier db>migrate > 
+Dans le dernier fichier db>migrate> 
 > add_column :products, :price, :decimal, :precision => 8, :scale => 2, :default => 0
 Dans le terminal
 > rake db:migrate:redo
@@ -43,3 +43,20 @@ Données obligatoire
 * Création du LineItem (table de liaison entre les paniers et les produits)
 > rails g scaffold LineItem cart_id:integer product_id:integer
 > rake db:migrate
+
+* Création d'une ressource au singulier
+> dans les routes on met 
+    resource :session 
+  au lieu de 
+    resources :sessions
+
+* redirection à la racine du site
+> Dans routes.php
+  root :to => 'store#index' (controller#vue)
+> Dans les controller
+  redirect_to root_url
+
+* Remettre à jour la table Product avec le premier category_id
+> rails c
+  Ouvre l'irb dans le terminal
+> Product.all.each {|p| p.category = Category.firts; p.save}

@@ -13,14 +13,10 @@
 */
 body {
 	background:#ccc8a2;
+	padding-top: 60px;
+	padding-bottom: 40px;
 }
-#main {
-	background:#e7e2c4;
-	border: 1px solid #beb999;
-	border-radius:5px;
-	margin-top: 80px;
-	padding: 20px 40px;
-}
+
 
 
 /* store */
@@ -33,6 +29,7 @@ body {
 }
 .product img {
 	border-radius:5px 5px 0 0;
+	width: 245px;
 }
 .product h2 {
 	background:#262014;
@@ -51,7 +48,7 @@ body {
 .product form {
 	position: absolute;
 	right:1px;
-	top:3px;	
+	top:2px;	
 	padding:0;
 }
 .product form, .product form div, .product input {
@@ -74,4 +71,10 @@ th, td {
 }
 th {
 	border-top:1px solid #bebb9c;
+}
+
+
+form.button_to {
+	margin:0;
+	width:auto;
 }

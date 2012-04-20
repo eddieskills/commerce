@@ -1,0 +1,55 @@
+<h1>Listing products</h1>
+
+<%= search_form_for [:admin, @q] do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.text_field :title_cont %>
+
+  <%= f.label :category_id_matches %>
+  <%= f.collection_select(:category_id_matches, Category.all, :id, :name, :include_blank => "Recherchez par catégorie") %>
+
+  <%= f.label :price_lteq %>
+  <%= f.text_field :price_lteq %>
+
+  <%= f.label :price_gteq %>
+  <%= f.text_field :price_gteq %>
+
+  <%= f.label :price_lteq %>
+  <%= f.text_field :price_lteq %>
+
+
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Photo</th>
+    <th><%= sort_link(@q, :title, "Titre") %></th>
+    <th>Catégorie</th>
+    <th>Prix</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= image_tag "/system/product_images/" + product.image_url, :height => '80' %></td>
+    <td><%= product.title %></td>
+    <td><%= product.category.name %></td>
+    <td><%= product.price %> €</td>
+    <td><%= product.description %></td>
+    <td><%= link_to 'Show', [:admin, product] %></td>
+    <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
+    <td><%= link_to 'Destroy', [:admin, product], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+  <% end %>
+  
+</table>
+
+<%= will_paginate @products %>
+
+<br />
+
+<%= link_to 'New Product', new_admin_product_path %>

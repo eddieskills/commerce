@@ -1,8 +1,10 @@
 class Product < ActiveRecord::Base
 
 	has_many :line_items, :dependent => :restrict
+	has_many :photos
+	belongs_to :category
 
-	validates_presence_of :title, :description, :image_url, :price
+	validates_presence_of :title, :description, :image_url, :price, :category_id
 	validates_numericality_of :price
 	validates_uniqueness_of :title
 

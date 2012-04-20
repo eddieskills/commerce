@@ -1,0 +1,17 @@
+<%= render @article %>
+
+<h3><%= pluralize(@article.comments.count, "Commentaire") %></h3>
+
+<%= form_for [@article, Comment.new] do |f| %>
+
+<%= f.text_area :body %>
+<%= f.submit %>
+
+<% end %>
+
+
+<table class="table">
+	<tbody>
+		<%= render @article.comments %>
+	</tbody>
+</table>

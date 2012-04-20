@@ -1,10 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-
 <h1>Votre panier</h1>
 
-<ul>
-<% @cart.line_items.each do |line_item| %>
-	<li><%= line_item.product.title %></li>
-<% end %>
-</ul>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Titre</th>
+			<th>Prix unitaire</th>
+			<th>Quantité</th>
+			<th>Total</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @cart.line_items.each do |line_item| %>
+		<tr>
+			<td><%= line_item.product.title %></td>
+			<td><%= line_item.product.price %></td>
+			<td><%= line_item.quantity %></td>
+			<td><%= line_item.total %></td>
+			<td><%= button_to 'Supprimer', line_item, :method => :delete, :class => "btn btn-primary" %></td>
+		</tr>
+	<% end %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>Prix total du panier : </td>
+			<td></td>
+			<td><%= @cart.totalProducts %></td>
+			<td><%= @cart.total %></td>
+			<td>
+				<%= button_to 'Vider le panier', @cart, :method => :delete, :class => "btn btn-primary" %>
+				<%= link_to 'Commander', new_order_url, :class => "btn btn-primary" %>
+
+				<!-- 
+				new_order_url = http://localhost:3000/orders/new
+				new_order_path = /orders/new
+				-->
+			</td>
+		</tr>
+	</tfoot>
+</table>
+

@@ -1,5 +1,15 @@
 <h1>Store</h1>
 
+<ul class="nav nav-pills">
+	<li><%= link_to "Toutes les catégories", root_url %></li>
+	<% Category.all.each do |category| %>
+	<li>
+		<%= link_to category.name, root_url(:q => {:category_id_eq => category.id}) %>
+	</li>
+	<% end %>
+</ul>
+
+
 <% @products.each do |product| %>
   <div class="product">
     <%= image_tag "/system/product_images/" + product.image_url, :height => '245' %>

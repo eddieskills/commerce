@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -19,7 +20,27 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 gem 'jquery-rails'
+
+# pagination
+gem "will_paginate"
+
+# upload d'image
+gem "paperclip"
+
+# requetes simplifiées
+gem "squeel"
+gem "ransack"
+
+# autentification
+gem "devise"
+gem "omniauth"
+
+gem "haml"
+
+gem 'simple_form'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
